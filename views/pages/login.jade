@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	.content.login
+		.block
+			.title Sign in
+			form 
+				.form-group
+					label username
+					input.form-control(type='text')
+				.form-group
+					label password
+					input.form-control(type='password')
+				button.btn.btn-default(type='submit') Login

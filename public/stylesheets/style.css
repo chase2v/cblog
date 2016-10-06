@@ -1,0 +1,148 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  font: 1.4rem "Microsoft Yahei UI"; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+  a:hover {
+    color: #a3a3a3;
+    text-decoration: none; }
+
+.content.home {
+  width: 100%;
+  height: 100%; }
+  .left, .content.admin .left {
+    height: 100%;
+    padding: 20px 0 20px 100px;
+    position: fixed;
+    left: 0; }
+    .left .logo, .content.admin .left .logo {
+      width: 100%;
+      height: 38px;
+      font: 22px "Microsoft Yahei UI"; }
+    .left .menu-bar, .content.admin .left .menu-bar {
+      width: 100%;
+      padding-top: 50px;
+      height: calc(100% - 60px);
+      font-family: "Microsoft Yahei UI"; }
+      .left .menu-bar .menu-unit {
+        margin-bottom: 20px; }
+        .left .menu-bar .menu-unit a {
+          font-family: "Microsoft Yahei UI";
+          padding-left: 20px; }
+  .content.home .right {
+    padding-right: 100px;
+    padding-left: 0;
+    position: relative; }
+    .content.home .right .header {
+      box-sizing: content-box;
+      height: 40px;
+      padding-top: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      position: fixed;
+      top: 0;
+      left: 25%;
+      right: 100px;
+      z-index: 1; }
+      .content.home .right .header .search {
+        padding-top: 10px; }
+        .content.home .right .header .search input {
+          border: none;
+          margin-left: 10px; }
+          .content.home .right .header .search input:focus {
+            outline: none; }
+      .content.home .right .header a {
+        font-size: 1.2rem;
+        position: absolute;
+        bottom: 1rem;
+        right: 1.6rem; }
+    .content.home .right .article-preview-block {
+      position: relative;
+      top: 60px; }
+      .content.home .right .article-preview-block .article-preview-unit {
+        height: 150px;
+        padding: 30px 0 20px 0;
+        border-bottom: 1px solid #eee; }
+        .content.home .right .article-preview-block .article-preview-unit .title {
+          font-size: 20px;
+          height: 40px;
+          line-height: 40px; }
+        .content.home .right .article-preview-block .article-preview-unit .article-preview {
+          height: 30px;
+          line-height: 30px; }
+        .content.home .right .article-preview-block .article-preview-unit .time {
+          height: 30px;
+          line-height: 30px;
+          font-size: 12px;
+          color: #ccc; }
+  .content.home .footer {
+    height: 60px;
+    line-height: 60px;
+    margin-top: 80px;
+    color: #ccc; }
+
+.content.article {
+  width: 80%;
+  margin: 0 auto; }
+  .content.article .header {
+    position: fixed;
+    top: 0;
+    width: 80%;
+    height: 60px;
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1; }
+    .content.article .header .logo {
+      font-size: 22px; }
+    .content.article .header .menu-bar {
+      position: absolute;
+      right: 16px;
+      bottom: 12px; }
+      .content.article .header .menu-bar a {
+        margin-left: 30px; }
+  .content.article .article {
+    padding-top: 7rem;
+    width: 630px;
+    margin: 0 auto; }
+    .content.article .article .time {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 5rem; }
+    .content.article .article .article-content {
+      line-height: 30px;
+      font-size: 1.8rem; }
+      .content.article .article .article-content div {
+        margin-bottom: 30px; }
+  .content.article .comment {
+    width: 630px;
+    margin: 0 auto;
+    padding: 30px 0 50px; }
+    .content.article .comment h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem; }
+    .content.article .comment textarea {
+      resize: none;
+      height: 150px; }
+    .content.article .comment input.form-control {
+      width: 50%; }
+
+.content.login .block {
+  width: 350px;
+  margin: 0 auto;
+  padding-top: 100px;
+  font-size: 1.6rem; }
+  .content.login .block .title {
+    font-size: 3rem;
+    margin-bottom: 2rem; }
+
+.content.admin .left {
+  border-right: 1px solid #666;
+  padding: 20px 0 20px 50px;
+  box-shadow: 2px 0 5px #666; }
+
+/*# sourceMappingURL=style.css.map */
