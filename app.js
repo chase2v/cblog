@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var article = require('./routes/article');
 var login = require('./routes/login');
 var admin = require('./routes/admin');
+var writing = require('./routes/writing');
 
 var app = express();
 
@@ -22,7 +23,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('cheney3w'));
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -32,9 +33,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/article/:id', article);
+app.use('/article', article);
 app.use('/login', login);
 app.use('/admin', admin);
+app.use('/admin/writing', writing);
+app.get('/signout',function (req, res, next) { 
+  res.clearCookie('u');
+  res.clearCookie('p');
+  res.redirect('/');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

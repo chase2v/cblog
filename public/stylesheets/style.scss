@@ -85,6 +85,7 @@ a {
 				position: absolute;
 				bottom: 1rem;
 				right: 1.6rem;
+				cursor: pointer;
 			}
 		}
 
@@ -116,10 +117,18 @@ a {
 		}
 	}
 
+	.pn {
+		margin-top: 80px;
+
+		a.next {
+			float: right;
+		}
+	}
+
 	.footer {
 		height: 60px;
 		line-height: 60px;
-		margin-top: 80px;
+		margin-top: 20px;
 
 		color: #ccc;
 	}
@@ -138,6 +147,12 @@ a {
 		border-bottom: 1px solid #ccc;
 		background-color: #fff;
 		z-index: 1;
+		transition: all 1s ease-out;
+
+		&.header-hide {
+			background-color: transparent;
+			border-bottom: none;
+		}
 
 		.logo {
 			font-size: 22px;
@@ -216,5 +231,90 @@ a {
 		border-right: 1px solid #666;
 		padding: 20px 0 20px 50px;
 		box-shadow: 2px 0 5px #666;
+		z-index: 1;
+		background-color: #fff;
+	}
+
+	@at-root .writing {
+		padding: 30px 20px;
+		position: relative;
+
+		.article-title {
+			text-indent: .5rem;
+			border: none;
+			width: 50%;
+			height: 50px;
+			line-height: 50px;
+			font-size: 2.5rem;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 20px;
+
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+		}
+
+		.article-content {
+			width: 70%;
+			line-height: 30px;
+			padding: 5px;
+			font-size: 1.6rem;
+			resize: none;
+
+			&:focus {
+				outline: none;
+			}
+		}
+		
+		.preview-block {
+			display: none;
+		}
+
+		.tool-bar {
+			position: absolute;
+			right: 100px;
+			top: 50px;
+
+			div {
+				margin-left: 20px;
+				display: inline-block;
+				cursor: pointer;
+			}
+		}
+
+		&.writing-fullscreen {
+			input.article-title {
+				display: none;
+			}
+			.article-content {
+				border: none;
+				width: 50%;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				padding: 35px 25px;
+			}
+			.preview-block {
+				line-height: 30px;
+				font-size: 1.6rem;
+				display: block;
+				padding: 35px 25px;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 50%;
+				border-left: 1px solid #ccc;
+				overflow: scroll;
+				word-wrap: break-word;
+			}
+
+			.tool-bar {
+				right: 20px;
+				top: 20px;
+			}
+		}
 	}
 }

@@ -1,0 +1,14 @@
+extends ../admin-layout
+
+block right
+	.writing
+		input.article-title(placeholder='文章的标题')
+		textarea#text-input.article-content(oninput='this.editor.update', rows='6', cols='60') 在这里编辑文章
+		#preview.preview-block
+		.tool-bar
+			.submit
+				span.glyphicon.glyphicon-ok
+			.fullscreen
+				span.glyphicon.glyphicon-resize-full
+	script(type='text/javascript', src='/javascripts/markdown.min.js')
+	script(type='text/javascript', src='/javascripts/writing.js')

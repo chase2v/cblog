@@ -59,7 +59,8 @@ a {
         font-size: 1.2rem;
         position: absolute;
         bottom: 1rem;
-        right: 1.6rem; }
+        right: 1.6rem;
+        cursor: pointer; }
     .content.home .right .article-preview-block {
       position: relative;
       top: 60px; }
@@ -79,10 +80,14 @@ a {
           line-height: 30px;
           font-size: 12px;
           color: #ccc; }
+  .content.home .pn {
+    margin-top: 80px; }
+    .content.home .pn a.next {
+      float: right; }
   .content.home .footer {
     height: 60px;
     line-height: 60px;
-    margin-top: 80px;
+    margin-top: 20px;
     color: #ccc; }
 
 .content.article {
@@ -96,7 +101,11 @@ a {
     padding-top: 20px;
     border-bottom: 1px solid #ccc;
     background-color: #fff;
-    z-index: 1; }
+    z-index: 1;
+    transition: all 1s ease-out; }
+    .content.article .header.header-hide {
+      background-color: transparent;
+      border-bottom: none; }
     .content.article .header .logo {
       font-size: 22px; }
     .content.article .header .menu-bar {
@@ -143,6 +152,68 @@ a {
 .content.admin .left {
   border-right: 1px solid #666;
   padding: 20px 0 20px 50px;
-  box-shadow: 2px 0 5px #666; }
+  box-shadow: 2px 0 5px #666;
+  z-index: 1;
+  background-color: #fff; }
+
+.writing {
+  padding: 30px 20px;
+  position: relative; }
+  .writing .article-title {
+    text-indent: .5rem;
+    border: none;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px; }
+    .writing .article-title:focus {
+      outline: none;
+      box-shadow: none; }
+  .writing .article-content {
+    width: 70%;
+    line-height: 30px;
+    padding: 5px;
+    font-size: 1.6rem;
+    resize: none; }
+    .writing .article-content:focus {
+      outline: none; }
+  .writing .preview-block {
+    display: none; }
+  .writing .tool-bar {
+    position: absolute;
+    right: 100px;
+    top: 50px; }
+    .writing .tool-bar div {
+      margin-left: 20px;
+      display: inline-block;
+      cursor: pointer; }
+  .writing.writing-fullscreen input.article-title {
+    display: none; }
+  .writing.writing-fullscreen .article-content {
+    border: none;
+    width: 50%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 35px 25px; }
+  .writing.writing-fullscreen .preview-block {
+    line-height: 30px;
+    font-size: 1.6rem;
+    display: block;
+    padding: 35px 25px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    border-left: 1px solid #ccc;
+    overflow: scroll;
+    word-wrap: break-word; }
+  .writing.writing-fullscreen .tool-bar {
+    right: 20px;
+    top: 20px; }
 
 /*# sourceMappingURL=style.css.map */
