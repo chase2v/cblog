@@ -80,6 +80,18 @@ a {
 				}
 			}
 
+			.panel.panel-heading {
+				display: none;
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				z-index: 1;
+				background-color: rgba(0, 0, 0, .6);
+				color: #fff;
+			}
+
 			a {
 				font-size: 1.2rem;
 				position: absolute;
@@ -236,6 +248,10 @@ a {
 	}
 
 	@at-root .writing {
+		@import './classic.css';
+		@import './classic.date.css';
+		@import './classic.time.css';
+
 		padding: 30px 20px;
 		position: relative;
 
@@ -256,11 +272,12 @@ a {
 		}
 
 		.article-content {
-			width: 70%;
+			width: 50.1%;
 			line-height: 30px;
 			padding: 5px;
 			font-size: 1.6rem;
 			resize: none;
+			border-color: #ccc;
 
 			&:focus {
 				outline: none;
@@ -276,7 +293,7 @@ a {
 			right: 100px;
 			top: 50px;
 
-			div {
+			.submit, .fullscreen {
 				margin-left: 20px;
 				display: inline-block;
 				cursor: pointer;

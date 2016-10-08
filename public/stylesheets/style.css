@@ -1,3 +1,6 @@
+@import url(./classic.css);
+@import url(./classic.date.css);
+@import url(./classic.time.css);
 html {
   font-size: 62.5%; }
 
@@ -55,6 +58,16 @@ a {
           margin-left: 10px; }
           .content.home .right .header .search input:focus {
             outline: none; }
+      .content.home .right .header .panel.panel-heading {
+        display: none;
+        width: 600px;
+        height: 400px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff; }
       .content.home .right .header a {
         font-size: 1.2rem;
         position: absolute;
@@ -172,11 +185,12 @@ a {
       outline: none;
       box-shadow: none; }
   .writing .article-content {
-    width: 70%;
+    width: 50.1%;
     line-height: 30px;
     padding: 5px;
     font-size: 1.6rem;
-    resize: none; }
+    resize: none;
+    border-color: #ccc; }
     .writing .article-content:focus {
       outline: none; }
   .writing .preview-block {
@@ -185,7 +199,7 @@ a {
     position: absolute;
     right: 100px;
     top: 50px; }
-    .writing .tool-bar div {
+    .writing .tool-bar .submit, .writing .tool-bar .fullscreen {
       margin-left: 20px;
       display: inline-block;
       cursor: pointer; }

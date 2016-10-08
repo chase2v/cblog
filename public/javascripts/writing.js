@@ -9,6 +9,8 @@ jQuery(function ($) {
 			$('.right').removeClass('col-lg-offset-2 col-lg-10');
 			$('.writing').addClass('writing-fullscreen');
 			$('.submit').hide();
+			$('input.timepicker').hide();
+			$('input.datepicker').hide();
 			$('.fullscreen')
 				.find('span')
 				.removeClass('glyphicon-resize-full')
@@ -21,6 +23,8 @@ jQuery(function ($) {
 			$('.right').addClass('col-lg-offset-2 col-lg-10');
 			$('.writing').removeClass('writing-fullscreen');
 			$('.submit').show();
+			$('input.timepicker').show();
+			$('input.datepicker').show();
 			$('.fullscreen')
 				.find('span')
 				.addClass('glyphicon-resize-full')
@@ -28,6 +32,8 @@ jQuery(function ($) {
 			state = 0;
 		}
 	});
+	$('.datepicker').pickadate();
+	$('.timepicker').pickatime()
 });
 
 function Editor(input, preview) {

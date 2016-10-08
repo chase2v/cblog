@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+let mysql = require('mysql');
 
 /* GET login page. */
 router.get('/', function(req, res, next) {
@@ -7,14 +8,30 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-	console.log(req.body);
-	let un = '5797f6a0224d32232a86f80b8820d36193d79d81',
-	pw = '8f154ceb9ea112463701d63907cda1b8a2c74111';
-	if (req.body.u === un && req.body.p === pw) {
-		res.cookie('u', un, { maxAge: 900000, signed: true });
-		res.cookie('p', pw, { expires: new Date(Date.now() + 900000), signed: true });
-		res.redirect('/admin');
-	}
+	let connection = mysql.createConnection({
+		host     : 'localhost',
+		user     : 'root',
+		password : '',
+		database : 'blog'
+	});
+
+	connection.connect();
+
+	connection.query('SELECT u, p FROM admin', (err, rows, fields) => {
+		if (err) console.log(err);
+
+		let user = rows[0];
+
+		if (req.body.u === user.u && req.body.p === user.p) {
+			res.cookie('u', user.u, { maxAge: 900000, signed: true });
+			res.cookie('p', user.p, { expires: new Date(Date.now() + 900000), signed: true });
+			res.sendStatus(200);
+		} else {
+			res.sendStatus(403);
+		}
+	});
+
+	connection.end();
 });
 
 module.exports = router;

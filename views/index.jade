@@ -3,34 +3,38 @@ extends layout
 block content
 	script(type='text/javascript', src='/javascripts/index.js')
 	.content.home
-		div.left.col-lg-3
+		.left.col-lg-3
 			.logo Cheney3w
-			div.menu-bar
-				div.menu-unit
+			.menu-bar
+				.menu-unit
 					span.glyphicon.glyphicon-home 
 					a(href='/') Home
-				div.menu-unit
+				.menu-unit
 					span.glyphicon.glyphicon-user 
 					a(href='javascript:;') About
-		div.right.col-lg-offset-3.col-lg-9
-			div.header
-				div.search
+		.right.col-lg-offset-3.col-lg-9
+			.header
+				.search
 					span.glyphicon.glyphicon-search
 					input(type='text', placeholder='Search')
+				.panel.panel-heading
+					.panel-heading
+						h3 搜索结果
+					.panel-body 不好意思，还没有写过关于此类的文章（暂时只支持搜索题目）
 				case isLogin
 					when 0
 						a(href='/login') Sign in
 					when 1
 						a(href='/admin')
 							span.glyphicon.glyphicon-cog
-			div.article-preview-block
+			.article-preview-block
 				each article in articles
 					.article-preview-unit
 						.title
 							a(href='/article/' + article.id )= article.title
-						.article-preview= article.articlePreview
+						.article-preview= article.preview
 						.time= article.time
-			div.pn
+			.pn
 				case page
 					when 0
 						break
@@ -41,5 +45,5 @@ block content
 					default
 						a.prev(href='/?page=' + (page-1)) Newer Ariticles
 						a.next(href='/?page=' + (page+1)) Older Ariticles
-			div.footer
+			.footer
 				.copyright Copyright © 2016 Cheney3w.

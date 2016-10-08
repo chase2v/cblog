@@ -1,7 +1,17 @@
-$(function () {
-	$('.search').keyup( (event) => {
+$(() => {
+	$('.search')
+	.keyup( (event) => {
 		if (event.keyCode === 13) {
-			alert('这项功能正在加急调整中，请稍后再试！');
+			$('.panel').show();
+		}
+	});
+	$('.search').find('input').on({
+		'input': () => {
+			$('.panel').hide();
+		},
+		'blur': (event) => {
+			$('.panel').hide();
+			$(event.target).val('');
 		}
 	});
 }
