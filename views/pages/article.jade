@@ -16,19 +16,8 @@ block content
 			.time= article.time
 			.article-content!= article.article
 		.comment
-			//- h1 发表评论
-			//- form
-			//- 	.form-group
-			//- 		textarea.form-control
-			//- 	.form-group
-			//- 		label 姓名
-			//- 		br
-			//- 		input.form-control
-			//- 	.form-group
-			//- 		label 邮箱
-			//- 		br
-			//- 		input.form-control(type='mail')
-			//- 	button.btn.btn-default 提交
 			div.ds-thread(data-thread-key=article.id, data-title='test', data-url='http://wchen.me/article/1')
+		.return
+			span.glyphicon.glyphicon-chevron-up
 	script(type='text/javascript', src='/javascripts/comment.js')
 	script(type='text/javascript', src='/javascripts/article.js')

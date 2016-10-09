@@ -152,6 +152,12 @@ a {
       height: 150px; }
     .content.article .comment input.form-control {
       width: 50%; }
+  .content.article .return {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    display: none; }
 
 .content.login .block {
   width: 350px;
@@ -229,5 +235,20 @@ a {
   .writing.writing-fullscreen .tool-bar {
     right: 20px;
     top: 20px; }
+
+.articles {
+  padding: 20px; }
+  .articles .id, .articles .comment {
+    width: 100px; }
+  .articles .time {
+    width: 200px; }
+  .articles .deleteBtn {
+    color: #f00;
+    cursor: pointer;
+    width: 50px;
+    text-align: center; }
+    .articles .deleteBtn:hover {
+      background-color: #f00;
+      color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

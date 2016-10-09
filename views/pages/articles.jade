@@ -1,0 +1,23 @@
+extends ../admin-layout.jade
+
+block right
+	.articles
+		.table-responsive
+			table.table.table-hover
+				tbody
+					tr
+						td #
+						td 标题
+						td 评论
+						td 发布时间
+						td
+					each row in data
+						tr
+							td.id= row.id
+							td
+								a(href='/article/'+row.id)= row.title
+							td.comment
+								a(href='javascript:;')= row.ct
+							td.time= row.time
+							td.deleteBtn 删除
+	script(type='text/javascript', src='/javascripts/articles.js')

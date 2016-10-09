@@ -221,6 +221,14 @@ a {
 			width: 50%;
 		}
 	}
+
+	.return {
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
+		cursor: pointer;
+		display: none;
+	}
 }
 
 .content.login {
@@ -331,6 +339,30 @@ a {
 			.tool-bar {
 				right: 20px;
 				top: 20px;
+			}
+		}
+	}
+
+	@at-root .articles {
+		padding: 20px;
+
+		.id, .comment {
+			width: 100px;
+		}
+
+		.time {
+			width: 200px;
+		}
+
+		.deleteBtn {
+			color: #f00;
+			cursor: pointer;
+			width: 50px;
+			text-align: center;
+
+			&:hover {
+				background-color: #f00;
+				color: #fff;
 			}
 		}
 	}
