@@ -17,6 +17,7 @@ var login = require('./routes/login');
 var admin = require('./routes/admin');
 var writing = require('./routes/writing');
 var articles = require('./routes/articles');
+var submit = require('./routes/submit');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/login', login);
 app.use('/admin', admin);
 app.use('/admin/writing', writing);
 app.use('/admin/articles', articles);
+app.use('/submit/', submit);
 app.get('/signout',function (req, res, next) { 
 	res.clearCookie('u');
 	res.clearCookie('p');

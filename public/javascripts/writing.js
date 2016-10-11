@@ -33,15 +33,48 @@ jQuery(function ($) {
 		}
 	});
 	$('.datepicker').pickadate();
-	$('.timepicker').pickatime()
+	$('.timepicker').pickatime();
+
+	$('.datepicker').on('change',  (event) => {
+		console.log( $(this).val() );
+		console.log( $('.timepicker').val() );
+	});
+
+	$('.submit').click( () => {
+		let article = $('#preview').html().replace(/\n|\r/g, ''),
+		preview = $('#preview').text().replace(/\n|\r/g, '').slice(0, 25);
+		let options = {
+			url: '/admin/writing/submit/save',
+			method: 'POST',
+			data: {
+				date: new Date($('.datepicker').val() + ' ' + $('.timepicker').val()).toLocaleString(),
+				title: $('.article-title').val(),
+				content: article,
+				preview: preview
+			},
+			error: (e) => {
+				console.log(e);
+			},
+			success: (msg) => {
+				debugger
+				if (msg === 'OK') {
+					$('.writing').append(`<div class="alert alert-success" style="width:50%;margin-top:10px;padding:5px 10px;font-size:1.2rem;">保存成功！</div>`);
+				}
+				setTimeout(()=>{
+					window.location.reload();
+				}, 2000);
+			}
+		}
+		$.ajax(options);
+	});
 });
 
 function Editor(input, preview) {
-  this.update = function () {
-    preview.innerHTML = markdown.toHTML(input.value);
-  };
-  input.editor = this;
-  this.update();
+	this.update = function () {
+		preview.innerHTML = markdown.toHTML(input.value);
+	};
+	input.editor = this;
+	this.update();
 }
 var $ = function (id) { return document.getElementById(id); };
 var editor = new Editor($("text-input"), $("preview"));
