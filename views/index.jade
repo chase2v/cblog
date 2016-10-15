@@ -2,19 +2,23 @@ extends layout
 
 block content
 	script(type='text/javascript', src='/javascripts/index.js')
-	.content.home
-		.left.col-lg-3
-			.logo Cheney3w
-			.menu-bar
-				.menu-unit
-					span.glyphicon.glyphicon-home 
-					a(href='/') Home
-				.menu-unit
-					span.glyphicon.glyphicon-user 
-					a(href='javascript:;') About
-		.right.col-lg-offset-3.col-lg-9
-			.header
-				.search
+	.home
+		.header
+			.container-fluid.col-sm-offset-3.col-md-8
+				.header-xs.visible-xs
+					span.glyphicon.glyphicon-list
+					aside.logo-xs Cheney3w
+					span.glyphicon.glyphicon-search
+				.side-bar.col-sm-2.hidden-xs
+					aside.logo Cheney3w
+					nav.menu-bar
+						.menu-unit
+							span.glyphicon.glyphicon-home 
+							a(href='/') Home
+						.menu-unit
+							span.glyphicon.glyphicon-user 
+							a(href='javascript:;') About
+				.search.hidden-xs
 					span.glyphicon.glyphicon-search
 					input(type='text', placeholder='Search')
 				.panel.panel-heading
@@ -23,10 +27,11 @@ block content
 					.panel-body 不好意思，还没有写过关于此类的文章（暂时只支持搜索题目）
 				case isLogin
 					when 0
-						a(href='/login') Sign in
+						a.user.hidden-xs(href='/login') Sign in
 					when 1
-						a(href='/admin')
+						a.user.hidden-xs(href='/admin')
 							span.glyphicon.glyphicon-cog
+		.main-content.container-fluid.col-sm-offset-3.col-md-8
 			.article-preview-block
 				each article in articles
 					.article-preview-unit
@@ -45,5 +50,5 @@ block content
 					default
 						a.prev(href='/?page=' + (page-1)) Newer Ariticles
 						a.next(href='/?page=' + (page+1)) Older Ariticles
-			.footer
-				.copyright Copyright © 2016 Cheney3w.
+		.footer.col-sm-offset-3
+			.copyright Copyright © 2016 Cheney3w.

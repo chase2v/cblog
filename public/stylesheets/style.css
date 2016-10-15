@@ -1,6 +1,11 @@
+@charset "UTF-8";
 @import url(./classic.css);
 @import url(./classic.date.css);
 @import url(./classic.time.css);
+* {
+  margin: 0;
+  padding: 0; }
+
 html {
   font-size: 62.5%; }
 
@@ -14,94 +19,118 @@ a {
     color: #a3a3a3;
     text-decoration: none; }
 
-.content.home {
-  width: 100%;
-  height: 100%; }
-  .left, .content.admin .left {
-    height: 100%;
-    padding: 20px 0 20px 100px;
+/* 主页 */
+.home {
+  /* 头部，菜单栏 */ }
+  .home .header {
+    width: 100%;
+    height: 60px;
+    padding-top: 20px;
+    background-color: #fff;
     position: fixed;
-    left: 0; }
-    .left .logo, .content.admin .left .logo {
-      width: 100%;
-      height: 38px;
-      font: 22px "Microsoft Yahei UI"; }
-    .left .menu-bar, .content.admin .left .menu-bar {
-      width: 100%;
-      padding-top: 50px;
-      height: calc(100% - 60px);
-      font-family: "Microsoft Yahei UI"; }
-      .left .menu-bar .menu-unit {
-        margin-bottom: 20px; }
-        .left .menu-bar .menu-unit a {
-          font-family: "Microsoft Yahei UI";
-          padding-left: 20px; }
-  .content.home .right {
-    padding-right: 100px;
-    padding-left: 0;
-    position: relative; }
-    .content.home .right .header {
-      box-sizing: content-box;
-      height: 40px;
-      padding-top: 20px;
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
+    top: 0;
+    z-index: 1; }
+    @media screen and (max-width: 768px) {
+      .home .header {
+        border-bottom: 1px solid #ccc; } }
+    .home .header .header-xs span {
+      font-size: 20px;
+      position: absolute;
+      top: 2px;
+      cursor: pointer; }
+      .home .header .header-xs span:last-child {
+        right: 15px; }
+    .home .header .header-xs .logo-xs {
+      font: 2rem "Microsoft Yahei UI";
+      text-align: center; }
+    .home .header .side-bar {
+      padding: 20px 0 0 30px;
+      height: 100%;
       position: fixed;
-      top: 0;
-      left: 25%;
-      right: 100px;
-      z-index: 1; }
-      .content.home .right .header .search {
-        padding-top: 10px; }
-        .content.home .right .header .search input {
-          border: none;
-          margin-left: 10px; }
-          .content.home .right .header .search input:focus {
-            outline: none; }
-      .content.home .right .header .panel.panel-heading {
-        display: none;
-        width: 600px;
-        height: 400px;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.6);
-        color: #fff; }
-      .content.home .right .header a {
-        font-size: 1.2rem;
-        position: absolute;
-        bottom: 1rem;
-        right: 1.6rem;
-        cursor: pointer; }
-    .content.home .right .article-preview-block {
-      position: relative;
-      top: 60px; }
-      .content.home .right .article-preview-block .article-preview-unit {
-        height: 150px;
-        padding: 30px 0 20px 0;
-        border-bottom: 1px solid #eee; }
-        .content.home .right .article-preview-block .article-preview-unit .title {
-          font-size: 20px;
-          height: 40px;
-          line-height: 40px; }
-        .content.home .right .article-preview-block .article-preview-unit .article-preview {
-          height: 30px;
-          line-height: 30px; }
-        .content.home .right .article-preview-block .article-preview-unit .time {
-          height: 30px;
-          line-height: 30px;
-          font-size: 12px;
-          color: #ccc; }
-  .content.home .pn {
+      left: 0;
+      top: 0; }
+      @media screen and (min-width: 1000px) {
+        .home .header .side-bar {
+          margin-left: 90px; } }
+      .home .header .side-bar .logo {
+        font: 2.5rem "Microsoft Yahei UI"; }
+      .home .header .side-bar .menu-bar {
+        padding-top: 40px;
+        height: 100%;
+        font-family: "Microsoft Yahei UI"; }
+        .home .header .side-bar .menu-bar .menu-unit {
+          margin-bottom: 20px;
+          padding-left: 5px; }
+          .home .header .side-bar .menu-bar .menu-unit a {
+            font-family: "Microsoft Yahei UI";
+            padding-left: 20px; }
+    .home .header .search {
+      padding: 10px 0 8px;
+      border-bottom: 1px solid #ccc; }
+      .home .header .search input {
+        border: none;
+        margin-left: 10px; }
+        .home .header .search input:focus {
+          outline: none; }
+    .home .header .panel.panel-heading {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff; }
+    .home .header a.user {
+      font-size: 1.2rem;
+      position: absolute;
+      bottom: .8rem;
+      right: 1.6rem;
+      cursor: pointer; }
+  @media screen and (max-width: 768px) {
+    .home .main-content .header {
+      display: none; }
+    .home .main-content .article-preview-block {
+      margin: 0 auto; } }
+  .home .main-content .article-preview-block {
+    position: relative;
+    top: 60px; }
+    .home .main-content .article-preview-block .article-preview-unit {
+      height: 150px;
+      padding: 25px 0 20px 0;
+      border-bottom: 1px solid #eee; }
+      .home .main-content .article-preview-block .article-preview-unit .title {
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px; }
+      .home .main-content .article-preview-block .article-preview-unit .article-preview {
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .home .main-content .article-preview-block .article-preview-unit .time {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        color: #ccc; }
+  .home .main-content .pn {
     margin-top: 80px; }
-    .content.home .pn a.next {
+    .home .main-content .pn a.next {
       float: right; }
-  .content.home .footer {
+  .home .footer {
+    padding: 0 15px;
+    position: absolute;
+    bottom: 0;
+    margin-top: 20px;
+    width: 100%;
     height: 60px;
     line-height: 60px;
-    margin-top: 20px;
     color: #ccc; }
+    @media screen and (max-width: 768px) {
+      .home .footer {
+        text-align: center; } }
 
 .content.article {
   width: 80%;

@@ -1,3 +1,8 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 html {
 	font-size: 62.5%;
 }
@@ -16,88 +21,118 @@ a {
 	}
 }
 
-.content.home {
-	width: 100%;
-	height: 100%;
+/* 主页 */
+.home {
 
-	@at-root .left {
-		height: 100%;
-		padding: 20px 0 20px 100px;
+	/* 头部，菜单栏 */
+	.header {
+		width: 100%;
+		height: 60px;
+		padding-top: 20px;
+		background-color: #fff;
 		position: fixed;
-		left: 0;
+		top: 0;
+		z-index: 1;
 
-		.logo {
-			width: 100%;
-			height: 38px;
-			font: 22px "Microsoft Yahei UI";
+		@media screen and (max-width: 768px) {
+			border-bottom: 1px solid #ccc;
 		}
 
-		.menu-bar {
-			width: 100%;
-			padding-top: 50px;
-			height: calc(100% - 60px);
-			
-			font-family: "Microsoft Yahei UI";
+		.header-xs {
+			span {
+				font-size: 20px;
+				position: absolute;
+				top: 2px;
+				cursor: pointer;
 
-			.menu-unit {
-				margin-bottom: 20px;
-			
-				a {
-					font-family: "Microsoft Yahei UI";
-					padding-left: 20px;
+				&:last-child {
+					right: 15px;
 				}
 			}
-		}
-	}
-
-	.right {
-		padding-right: 100px;
-		padding-left: 0;
-		position: relative;
-
-		.header {
-			box-sizing: content-box;
-			height: 40px;
-			padding-top: 20px;
-			background-color: #fff;
-			border-bottom: 1px solid #ccc;
-			position: fixed;
-			top: 0;
-			left: 25%;
-			right: 100px;
-			z-index: 1;
 			
-			.search {
-				padding-top: 10px;
+			.logo-xs {
+				font: 2rem "Microsoft Yahei UI";
+				text-align: center;
+			}
+		}
 
-				input {
-					border: none;
-					margin-left: 10px;
 
-					&:focus {
-						outline: none;
+		.side-bar {
+			padding: 20px 0 0 30px;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 0;
+
+			@media screen and (min-width: 1000px) {
+				margin-left: 90px;
+			}
+
+			.logo {
+				font: 2.5rem "Microsoft Yahei UI";
+			}
+
+			.menu-bar {
+				padding-top: 40px;
+				height: 100%;
+				
+				font-family: "Microsoft Yahei UI";
+
+				.menu-unit {
+					margin-bottom: 20px;
+					padding-left: 5px;
+				
+					a {
+						font-family: "Microsoft Yahei UI";
+						padding-left: 20px;
 					}
 				}
 			}
+		}
+			
+		.search {
+			padding: 10px 0 8px;
+			border-bottom: 1px solid #ccc;
 
-			.panel.panel-heading {
+			input {
+				border: none;
+				margin-left: 10px;
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+
+		.panel.panel-heading {
+			display: none;
+			width: 600px;
+			height: 400px;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 1;
+			background-color: rgba(0, 0, 0, .6);
+			color: #fff;
+		}
+
+		a.user {
+			font-size: 1.2rem;
+			position: absolute;
+			bottom: .8rem;
+			right: 1.6rem;
+			cursor: pointer;
+		}
+	}
+
+	.main-content {	
+		@media screen and (max-width: 768px) {
+			.header {
 				display: none;
-				width: 600px;
-				height: 400px;
-				position: absolute;
-				top: 100%;
-				left: 0;
-				z-index: 1;
-				background-color: rgba(0, 0, 0, .6);
-				color: #fff;
 			}
 
-			a {
-				font-size: 1.2rem;
-				position: absolute;
-				bottom: 1rem;
-				right: 1.6rem;
-				cursor: pointer;
+			.article-preview-block {
+				margin: 0 auto;
 			}
 		}
 
@@ -107,7 +142,7 @@ a {
 
 			.article-preview-unit {
 				height: 150px;
-				padding: 30px 0 20px 0;
+				padding: 25px 0 20px 0;
 				border-bottom: 1px solid #eee;
 
 				.title {
@@ -118,6 +153,9 @@ a {
 				.article-preview {
 					height: 30px;
 					line-height: 30px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 				.time {
 					height: 30px;
@@ -127,22 +165,31 @@ a {
 				}
 			}
 		}
-	}
+	
+		.pn {
+			margin-top: 80px;
 
-	.pn {
-		margin-top: 80px;
-
-		a.next {
-			float: right;
+			a.next {
+				float: right;
+			}
 		}
+
 	}
 
 	.footer {
-		height: 60px;
-		line-height: 60px;
+		padding: 0 15px;
+		position: absolute;
+		bottom: 0;
 		margin-top: 20px;
 
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
 		color: #ccc;
+
+		@media screen and (max-width: 768px) {
+			text-align: center;
+		}
 	}
 }
 
